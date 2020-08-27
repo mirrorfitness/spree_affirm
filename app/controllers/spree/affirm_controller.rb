@@ -57,9 +57,8 @@ module Spree
         amount: order.total,
         source: _affirm_checkout
       })
-
       # transition to confirm or complete
-      order.next
+      order.next!
 
       redirect_to checkout_path
     end
